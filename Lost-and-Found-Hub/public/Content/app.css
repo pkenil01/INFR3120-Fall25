@@ -1,8 +1,47 @@
 body {
-  padding: 50px;
+  /* remove top spacing so navbar sits flush to the top of the viewport;
+     add extra bottom padding so fixed footer doesn't overlap page content */
+  padding: 0 0 140px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
+
+/* School-themed navbar: navy background with gold accents */
+.school-navbar {
+  background-color: #003366 !important;
+}
+.school-navbar .navbar-brand,
+.school-navbar .nav-link {
+  color: #ffd966 !important; /* gold-ish */
+}
+.school-navbar .nav-link.active,
+.school-navbar .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* (Top utility bar removed - styles left here can be deleted if not needed) */
+
+/* Footer styling to match school theme */
+.site-footer {
+  background-color: #003366;
+  color: #ffd966;
+  position: relative;
+  z-index: 1030;
+  width: 100%;
+}
+.site-footer.fixed-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.site-footer .text-muted { color: rgba(255, 217, 102, 0.85) !important; }
+.site-footer a { color: #ffd966; text-decoration: none; }
+.site-footer a.text-gold { color: #ffd966 !important; }
+.site-footer h5 { color: #ffd966; }
+
+/* small helper for gold text used in headings/links */
+.text-gold { color: #ffd966 !important; }
