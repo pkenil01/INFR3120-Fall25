@@ -1,8 +1,56 @@
 body {
-  padding: 50px;
+  /* remove top spacing so navbar sits flush to the top of the viewport;
+     leave a small bottom padding so fixed footer doesn't overlap content */
+  padding: 0 0 60px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+/* Header: darker variant to pair with footer's hopeful gradient */
+.school-navbar {
+  background: linear-gradient(90deg, #2b8f57 0%, #1f6f45 50%, #164f34 100%) !important;
 }
+.school-navbar .navbar-brand,
+.school-navbar .nav-link {
+  color: #fffde6 !important; /* light, readable on darker header */
+}
+.school-navbar .nav-link.active,
+.school-navbar .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Footer*/
+.site-footer {
+  background: linear-gradient(90deg, #b9f6d0 0%, #45c06a 50%, #2ea44a 100%);
+  color: #ffffff;
+  width: 100%;
+}
+.site-footer.fixed-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1030;
+}
+.site-footer .text-muted { color: rgba(255,255,255,0.9) !important; }
+.site-footer a { color: #fffde6; text-decoration: none; }
+.site-footer h5 { color: #ffffff; }
+
+/* Icon and centered-brand button sizing */
+.logo-img { height: 28px; width: 28px; display: inline-block; vertical-align: middle; }
+.fa-custom { display: inline-block; width: 28px; height: 28px; }
+
+/* Make the centered brand look like a slightly hand-made button */
+.navbar-brand.btn {
+  border-color: rgba(255,255,255,0.35);
+  color: #ffffff !important;
+}
+.navbar-brand.btn:hover {
+  background: rgba(255,255,255,0.05);
+  color: #ffffff !important;
+}
+
+/* Hero logo on main page */
+.hero { display:flex; justify-content:center; align-items:center; }
+.hero { margin-top: -8px; }
+.hero-logo { max-width: 120px; width: 35%; height: auto; border: 1.5px dashed rgba(255,255,255,0.12); padding: 4px; background: rgba(255,255,255,0.02); border-radius: 6px; }
+
