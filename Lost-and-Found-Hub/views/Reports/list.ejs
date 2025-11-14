@@ -16,6 +16,9 @@
         <div class="offset-md-1 col-md-10">
           <h1>Reports</h1>
           <br>
+          <a href="/reports/add" class="btn btn-primary" role="button">Add a Report
+            <i class="fa-solid fa-plus"></i>
+          </a>
           <table class ="table table-bordered table-striped table-hover">
             <!-- header row-->
               <tr class="d-flex">
@@ -35,6 +38,15 @@
                 <td class="text-center col-2"><%= ReportList[count].status %></td>
                 <td class="text-center col-2"><%= ReportList[count].location %></td>
                 <td class="text-center col-2"><%= ReportList[count].date %></td>
+                <td class="text-center col-1">
+                  <a href="/reports/edit/<%= ReportList[count]._id %>" 
+                  class="btn btn-primary btn-sm">
+                Edit</a></td>
+                
+                <td class="text-center col-1">
+                <a href="/reports/delete/<%= ReportList[count]._id %>" 
+                  class="btn btn-danger btn-sm">Delete</a>
+                </td>
               </tr>
               <% } %>
           </table>
