@@ -69,14 +69,60 @@ router.post('/add', async (req, res, next) => {
 });
 // Get route for Displaying the edit page - Update operation
 router.get('/edit/:id',async (req, res, next) => {
+    try {
+         const id = req.params.id;
+            const reportToEdit = await Report.findById(id);
+            res.render('Reports/edit',{
+                title: 'Edit Report',
+                Report: reportToEdit
+            });
+        }
+        catch (err)
+        {
+            console.log(err);
+            next(err);
+        }
 
 });
 // Post route for processiong the edit page - Update operation
 router.post('/edit/:id',async (req, res, next) => {
+    try {
+        let id = req.params.id;
+            let updateReport = Report({
+                "_id": id,
+                "name": req.body.name,
+                "description": req.body.description,
+                "category": req.body.category,
+                "status": req.body.status,
+                "location": req.body.location,
+                "date": req.body.date
+            });
+            Report.findByIdAndUpdate(id,updateReport).then(()=>{
+                res.redirect('/reports');
+            });
+        }
+    catch (err)
+        {
+            console.log(err);
+            next(err);
+        }
 
 });
 // Get route to perform delete operation - Delete operation
 router.get('/delete/:id',async (req, res, next) => {
+    
+    try {
+        let id = req.params.id;
+        Report.deleteOne({_id: id}).then(()=>{
+            res.redirect('/reports');
+        });
+    }
+    catch (err)
+        {
+            console.log(err);
+            next(err);
+        }
+
 
 });
 
