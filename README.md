@@ -16,5 +16,5 @@ Full CRUD functionality:
 Tech Stack: 
 Node.js, Express.js, MongoDB, Mongoose, EJS, Render
 
-Team Members:
+Team:
 Aaron Fernandez, Kenil Patel, Rabijan Ragupalan
