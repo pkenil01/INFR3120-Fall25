@@ -25,7 +25,7 @@ where things are:
 #notes about code used from lectures and other help: (Aaron)
 - referenced examples and patterns from lecture 9 and lecture 10 for express routing, middleware, and views. those lecture notes helped me set up routes.
 -used bootstrap and font-awesome examples (common docs and lecture snippets) for styling and icons.
-#credits and sources (where i learned or copied code)
+#credits and sources (where i learned or used code from)
 - lecture 9 and lecture 10: examples for express routes, middleware, and ejs templating
 - bootstrap docs and font-awesome examples for styling and icons
 - canva for the project logo
