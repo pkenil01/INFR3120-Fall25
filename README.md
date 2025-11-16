@@ -4,8 +4,8 @@ The application is hosted live using the Render Cloud Application Platform:
 - Live Website:
 
 Features:
-Submit item reports with "Item Name", "Description", "Category" (e.g., Clothing, Electronics), 
-"Status" (Lost or Found), "Location" (where the item was lost), and "Date" (when the item was lost).
+Submit item reports with Item Name, Description, Category (e.g., Clothing, Electronics), 
+Status (Lost or Found), Location (where the item was lost), and Date (when the item was lost).
 
 Full CRUD functionality:
 - Create new reports
