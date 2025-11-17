@@ -4,9 +4,9 @@ The application is hosted live using the Render Cloud Application Platform: http
 #Features: Submit item reports with Item Name, Description, Category (e.g., Clothing, Electronics), Status (Lost or Found), Location (where the item was lost), and Date (when the item was lost).
 
 #Full CRUD functionality:
+- Create new reports, view/read existing reports, edit reports, delete reports
 
-Create new reports View/read existing reports Edit reports Delete reports Tech Stack: Node.js, Express.js, MongoDB, Mongoose, EJS, Render
-
+Tech Stack: Node.js, Express.js, MongoDB, Mongoose, EJS, Render
 Team: Aaron Fernandez, Kenil Patel, Rabijan Ragupalan
 
 (Aaron) what I built and why:
