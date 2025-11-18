@@ -1,0 +1,66 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+<!-- main content for adding a report  -->
+ <div class = "container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1 class="text-center mt-2">Edit Report</h1>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <Label for="nameTextField">Name:</Label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="What did you lose?"
+                    name="name" required
+                    value="<%= Report.name %>">
+        </div>
+                <div class="form-group">
+                    <Label for="descriptionTextArea">Description:</Label>
+                    <textarea type="text" class="form-control"
+                    id="descriptionTextArea"
+                    placeholder="Breifly describe the item"
+                    name="description" required><%= Report.description %></textarea>
+                </div>
+                <div class="form-group">
+                    <Label for="categoryTextField">Category:</Label>
+                    <input type="text" class="form-control"
+                    id="categoryTextField"
+                    placeholder="Category of item"
+                    name="category" required
+                    value="<%= Report.category %>">
+                </div>
+                <div class="form-group">
+                    <Label for="statusTextField">Status:</Label>
+                    <input type="text" class="form-control"
+                    id="statusTextField"
+                    placeholder="Status of item"
+                    name="status" required
+                    value="<%= Report.status %>">
+                </div>
+                <div class="form-group">
+                    <Label for="locationTextField">Location:</Label>
+                    <input type="text" class="form-control"
+                    id="locationTextField"
+                    placeholder="Where was the item lost/found?"
+                    name="location" required
+                    value="<%= Report.location %>">
+                </div>
+                <div class="form-group">
+                    <Label for="dateTextField">Date:</Label>
+                    <input type="date" class="form-control"
+                    id="dateTextField"
+                    placeholder="Date item was lost/found"
+                    name="date" required
+                    value="<%= Report.date %>">
+                </div>
+<br>
+                <button type="submit" class="btn btn-primary">Submit
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+                <a href="/reports" class="btn btn-secondary">Cancel
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </form>
+        </div>
+    </div>
+ </div>
