@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* Kenil Part 2 - Users Route File */
+/* Kenil Part 2*/
 
 /* Import the user model */
 var user = require('../models/user');
@@ -28,6 +28,33 @@ router.post('/register', function(req, res, next) {
     res.send('User registered successfully. Please <a href="/users/login">login</a>.');
   });
 });
+
+/* Get users login page. */
+router.get('/login', function(req, res, next) {
+  res.render('users/login', { title: 'Login' });
+});
+
+/* Post users login page. */
+router.post('/login', function(req, res, next) {
+  /* Read user data */
+  let enteredUsername = req.body.username;
+  let enteredPassword = req.body.password;
+  /* Find user in the database */
+  user.findOne({ username: enteredUsername, password: enteredPassword }, function(err, user) {
+    if (user) {
+      /* Successful login */
+      res.send('Login successful. Welcome, ' + enteredUsername + '!');
+    } else {
+      /* Failed login */
+      res.send('Invalid username or password. Please try again.');
+    }
+  });
+});
+  
+
+
+
+
 
 
 
