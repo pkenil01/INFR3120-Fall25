@@ -54,3 +54,16 @@ body {
 .hero { margin-top: -8px; }
 .hero-logo { max-width: 120px; width: 35%; height: auto; border: 1.5px dashed rgba(255,255,255,0.12); padding: 4px; background: rgba(255,255,255,0.02); border-radius: 6px; }
 
+/* auth (login/register) styles */
+.auth-card { border-radius: 8px; }
+.auth-title { font-weight: 600; text-transform: none; color: #164f34; }
+.auth-card .form-control { border-radius: 6px; padding: 10px 12px; }
+.auth-card .btn { font-weight: 600; }
+.auth-card .small { color: #6c757d; }
+
+/* responsive tweaks */
+@media (max-width: 576px) {
+  .auth-card { padding: 18px; }
+  .hero-logo { width: 48%; }
+}
+
