@@ -7,15 +7,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <% if (user) { %>
-      <a class="navbar-brand btn btn-sm btn-outline-light mx-auto" href="/reports">
-        Lost and Found
-      </a>
-    <% } else { %>
-      <span class="navbar-brand btn btn-sm btn-outline-light mx-auto disabled">
-        Lost and Found
-      </span>
-    <% } %>
+    <!-- Lost & Found button – ALWAYS clickable -->
+    <a class="navbar-brand btn btn-sm btn-outline-light mx-auto" href="/reports">
+      Lost and Found
+    </a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -50,6 +45,7 @@
           <% } %>
 
         <% } else { %>
+
           <li class="nav-item">
             <a class="nav-link" href="/reports">
               <i class="fa-solid fa-clipboard-list"></i> Reports
@@ -67,6 +63,7 @@
               <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
             </a>
           </li>
+
         <% } %>
 
       </ul>
