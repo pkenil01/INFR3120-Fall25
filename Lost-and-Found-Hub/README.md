@@ -2,7 +2,6 @@ Lost & Found Hub is a web application designed to help students quickly report a
 
 The application is hosted live using the Render Cloud Application Platform:
 
-Live Website:
 Features: Submit item reports with Item Name, Description, Category (e.g., Clothing, Electronics), Status (Lost or Found), Location (where the item was lost), and Date (when the item was lost).
 
 Full CRUD functionality:
