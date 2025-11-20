@@ -38,6 +38,10 @@ notes about code used from lectures and other help (Aaron)
 - some stack overflow for small code snippets and troubleshooting help
 - mongoose docs and mongodb manual for schema and connection examples
 
+auth and route protection notes (where some of the code came from)
+- i kept the checks inline in each route(simple if (!req.session.user) res.redirect(/users/login') )
+- small snippets and ideas were also referenced from stackoverflow when trying different redirect and check approaches.
+
 
 how to test quickly (note for our future use)
 1. npm install
@@ -45,3 +49,4 @@ how to test quickly (note for our future use)
 3. npm start
 4. open http://localhost:3000
 5. create a report via the form and then visit /reports to see the list
+ see the list

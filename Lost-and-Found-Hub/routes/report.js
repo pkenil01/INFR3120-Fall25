@@ -3,6 +3,9 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let Report = require('../models/report');
 
+// inline auth checks
+// each route does a quick check
+
 //get
 //post
 //put
@@ -33,7 +36,13 @@ router.get('/', async (req, res, next) => {
 })
 
 // get route for the displaying the add page - create operation
-router.get('/add',async (req, res, next) => {
+router.get('/add', async (req, res, next) => {
+    // check - require the user to be logged in
+    if (!req.session || !req.session.user) {
+        console.log('user not logged in - redirecting to login');
+        return res.redirect('/users/login');
+    }
+    
     try {
         res.render('Reports/add',{
             title: 'Add Report'
@@ -49,6 +58,11 @@ router.get('/add',async (req, res, next) => {
 });
 // Post route for processiong the add page - create operation
 router.post('/add', async (req, res, next) => {
+    // simple check before creating
+    if (!req.session || !req.session.user) {
+        console.log('attempt to add report without login');
+        return res.redirect('/users/login');
+    }
     try {
         let newReport = {
             name: req.body.name,
@@ -68,7 +82,12 @@ router.post('/add', async (req, res, next) => {
     }
 });
 // Get route for Displaying the edit page - Update operation
-router.get('/edit/:id',async (req, res, next) => {
+router.get('/edit/:id', async (req, res, next) => {
+    // check login first 
+    if (!req.session || !req.session.user) {
+        console.log('not logged in - cannot edit');
+        return res.redirect('/users/login');
+    }
     try {
          const id = req.params.id;
             const reportToEdit = await Report.findById(id);
@@ -85,7 +104,11 @@ router.get('/edit/:id',async (req, res, next) => {
 
 });
 // Post route for processiong the edit page - Update operation
-router.post('/edit/:id',async (req, res, next) => {
+router.post('/edit/:id', async (req, res, next) => {
+    if (!req.session || !req.session.user) {
+        console.log('not logged in - cannot update');
+        return res.redirect('/users/login');
+    }
     try {
         let id = req.params.id;
             let updateReport = Report({
@@ -109,8 +132,11 @@ router.post('/edit/:id',async (req, res, next) => {
 
 });
 // Get route to perform delete operation - Delete operation
-router.get('/delete/:id',async (req, res, next) => {
-    
+router.get('/delete/:id', async (req, res, next) => {
+    if (!req.session || !req.session.user) {
+        console.log('not logged in - cannot delete');
+        return res.redirect('/users/login');
+    }
     try {
         let id = req.params.id;
         Report.deleteOne({_id: id}).then(()=>{
