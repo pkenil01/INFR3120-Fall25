@@ -7,10 +7,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Lost & Found link -->
-    <a class="navbar-brand btn btn-sm btn-outline-light mx-auto" href="/reports">
-      Lost and Found
-    </a>
+    <!-- Lost & Found: HIDDEN on Login and Register pages -->
+    <% if (title !== 'Login' && title !== 'Register') { %>
+      <a class="navbar-brand btn btn-sm btn-outline-light mx-auto" href="/reports">
+        Lost and Found
+      </a>
+    <% } %>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -60,7 +62,6 @@
             </a>
           </li>
 
-          <!-- LOGOUT always visible on every page except login/signup -->
           <li class="nav-item">
             <a class="nav-link" href="/users/logout">
               <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
