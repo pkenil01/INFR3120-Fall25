@@ -1,26 +1,32 @@
 <!--Kenil Part 2-->
 <% include ../partials/header.ejs %>
 <% include ../partials/main_nav.ejs %>
-<!-- Registration Page Template -->
-<!DOCTYPE html>
-<html>
-<!-- Register Page -->
-<head>
-    <title>Register</title>
-</head>
-<body>
-    <!--Page Header-->
-    <h2>Registration</h2>
-    <!-- Registration Form -->
-    <form action="/users/register" method="POST">
-        <!-- Username Input -->
-        <input type="text" name="username" placeholder="Username" required><br><br>
-        <!-- Password Input -->
-        <input type="password" name="password" placeholder="Password" required><br><br>
-        <!-- Submit Button -->
-        <button type="submit">Register</button>
-    </form>
-    <!-- Link to Login Page  -->
-    <p>Existing user? <a href="/users/login">Login</a></p>
+
+<main class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card auth-card p-4 shadow-sm">
+                        <h3 class="auth-title text-center mb-3">Register</h3>
+
+                        <% if (typeof error !== 'undefined' && error) { %>
+                            <div class="alert alert-danger"><%= error %></div>
+                        <% } %>
+
+                        <form action="/users/register" method="POST">
+                            <div class="mb-3">
+                                <input class="form-control" type="text" name="username" placeholder="Username" required>
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            </div>
+                            <button class="btn btn-primary w-100" type="submit">Register</button>
+                        </form>
+
+                        <div class="text-center mt-3 small">Existing user? <a href="/users/login">Login</a></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
 </body>
 </html>

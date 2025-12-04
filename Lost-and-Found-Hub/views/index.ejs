@@ -1,0 +1,38 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/main_nav.ejs') %>
+
+<main class="container mt-4">
+  <div class="row">
+    <div class="col-12 text-center hero">
+      <img src="/Content/lostfound.png" alt="Lost & Found" class="hero-logo">
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-8 offset-md-2">
+      <div class="card p-4">
+        <h1 class="mb-3">Welcome to Lost and Found Hub</h1>
+        <p class="lead">A simple place to report lost or found items on campus. Browse existing reports, add a new one, or sign in to manage your reports.</p>
+
+        <div class="d-flex gap-2 mt-3">
+          <a class="btn btn-success" href="/reports">View Reports</a>
+          <% if (user) { %>
+            <a class="btn btn-outline-primary" href="/reports/add">Add Report</a>
+          <% } else { %>
+            <a class="btn btn-outline-primary" href="/users/login">Login to add</a>
+          <% } %>
+          <a class="btn btn-light" href="/about">How it works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer fixed-bottom mt-4 py-2 text-center">
+    <div class="container">
+      <small class="text-muted">&copy; <%= new Date().getFullYear() %> Lost and Found Hub</small>
+    </div>
+  </footer>
+</main>
+
+</body>
+</html>

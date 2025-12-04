@@ -6,6 +6,15 @@ let Report = require('../models/report');
 // inline auth checks
 // each route does a quick check
 
+// Require login for all /reports routes
+router.use((req, res, next) => {
+    if (!req.session || !req.session.user) {
+        console.log('not logged in - redirecting to login (reports)');
+        return res.redirect('/users/login');
+    }
+    next();
+});
+
 //get
 //post
 //put

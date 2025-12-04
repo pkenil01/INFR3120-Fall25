@@ -19,7 +19,7 @@ router.get('/viewall', function(req, res, next) {
 });
 
 router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'How it Works' });
+  res.render('about', { title: 'How it Works' });
 });
 
 router.get('/contactus', function(req, res, next) {
