@@ -1,3 +1,4 @@
+// config/app.js
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,6 +8,10 @@ let mongoose = require('mongoose');
 let DB = require('./db');
 
 const session = require('express-session'); // sessions
+require('dotenv').config(); // load .env if present
+
+// Passport (load after dotenv)
+const passport = require('./passport');
 
 mongoose.connect(DB.URI);
 let mongoDB = mongoose.connection;
@@ -34,14 +39,18 @@ app.use(express.static(path.join(__dirname, '..', 'node_modules')));
 
 // session middleware
 app.use(session({
-  secret: 'lostandfoundsecret',
+  secret: process.env.SESSION_SECRET || 'lostandfoundsecret',
   resave: false,
   saveUninitialized: true
 }));
 
-// make user available to all EJS files
+// Initialize passport (must come after session middleware)
+app.use(passport.initialize());
+app.use(passport.session());
+
+// make user available to all EJS files (use req.user set by passport)
 app.use((req, res, next) => {
-  res.locals.user = req.session.user || null;
+  res.locals.user = req.user || null;
   next();
 });
 
