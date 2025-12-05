@@ -58,4 +58,33 @@ router.get('/logout', function(req, res) {
   });
 });
 
+//Part 3
+// Change password page
+router.get('/change-password', function(req, res) {
+  res.render('users/change-password', { title: 'Change Password' });
+});
+
+// Change password POST
+router.post('/change-password', async function(req, res) {
+  try {
+
+    let foundUser = await user.findOne({
+      username: req.session.user.username,
+      password: req.body.oldPassword
+    });
+
+    if (!foundUser) {
+      return res.send('Old password is wrong.');
+    }
+
+    foundUser.password = req.body.newPassword;
+    await foundUser.save();
+    res.send('Password changed!');
+
+  } catch (err) {
+    console.error('Change password error:', err);
+    res.status(500).send('Error changing password.');
+  }
+});
+
 module.exports = router;

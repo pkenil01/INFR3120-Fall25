@@ -10,7 +10,7 @@
     <!-- Lost & Found: HIDDEN on Login and Register pages -->
     <% if (title !== 'Login' && title !== 'Register') { %>
       <a class="navbar-brand btn btn-sm btn-outline-light mx-auto" href="/reports">
-        Lost and Found
+        Lost & Found Hub
       </a>
     <% } %>
 
@@ -59,6 +59,13 @@
           <li class="nav-item">
             <a class="nav-link" href="/reports/add">
               <i class="fa-solid fa-plus"></i> Add Report
+            </a>
+          </li>
+
+          <!--Change Password-->
+          <li class="nav-item">
+            <a class="nav-link" href="/users/change-password">
+              <i class="fa-solid fa-key"></i> Change Password
             </a>
           </li>
 
