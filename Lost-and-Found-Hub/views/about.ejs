@@ -1,28 +1,46 @@
-
 <%- include('./partials/header.ejs') %>
 <%- include('./partials/main_nav.ejs') %>
+
+<style>
+  body {
+    background: #f7f9ff;
+  }
+  .info-icon {
+    width: 72px;
+    height: 72px;
+    background: #28a745;
+    border-radius: 50%;
+  }
+</style>
 
 <main class="container mt-4">
   <div class="row">
     <div class="col-12">
-      <div class="card shadow-sm p-4 mb-4" style="border-radius:12px;">
+
+      <div class="card shadow-sm p-4 mb-4" style="border-radius: 14px;">
         <div class="d-flex align-items-center gap-3">
-          <div>
-            <div class="bg-success rounded-circle d-flex justify-content-center align-items-center" style="width:72px;height:72px;">
-              <i class="fa-solid fa-compass fa-2x text-white"></i>
-            </div>
+          <div class="info-icon d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-compass fa-2x text-white"></i>
           </div>
+
           <div>
             <h2 class="mb-1">How It Works</h2>
-            <p class="mb-0 text-muted">Quickly browse reports or sign in to add and manage yours.</p>
+            <p class="mb-0 text-muted">
+              Browse reports, or sign in to create and manage your own.
+            </p>
           </div>
         </div>
 
-        <div class="mt-4 d-flex flex-wrap gap-2">
-          <a class="btn btn-success btn-lg" href="/reports">View Reports</a>
-          <a class="btn btn-outline-primary btn-lg" href="/users/login">Login</a>
+        <div class="mt-4 d-flex flex-wrap gap-3">
+          <a class="btn btn-success btn-lg px-4" href="/reports">
+            <i class="fa-solid fa-list me-2"></i> View Reports
+          </a>
+          <a class="btn btn-outline-primary btn-lg px-4" href="/users/login">
+            <i class="fa-solid fa-right-to-bracket me-2"></i> Login
+          </a>
         </div>
       </div>
+
     </div>
   </div>
 </main>

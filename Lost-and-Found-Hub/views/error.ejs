@@ -1,5 +1,17 @@
-<%-include ./partials/header.ejs %>
-<%-include ./partials/main_nav.ejs %>
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/main_nav.ejs') %>
+
+<style>
+  body { background: #fff4f4; }
+</style>
+
+<div class="container mt-5 text-center">
+  <i class="fa-solid fa-circle-exclamation fa-4x text-danger mb-3"></i>
+  <h1 class="text-danger"><%= message %></h1>
+  <h4>Status: <%= error.status %></h4>
+
+  <pre class="mt-4 p-3 bg-white shadow-sm rounded text-start"><%= error.stack %></pre>
+</div>
+
+</body>
+</html>
