@@ -1,52 +1,32 @@
-<!-- views/users/login.ejs -->
-<%- include ../partials/header.ejs %>
-<%- include ../partials/main_nav.ejs %>
+<!--Kenil Part 2-->
+<% include ../partials/header.ejs %>
+<% include ../partials/main_nav.ejs %>
 
 <main class="container mt-5">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <div class="card auth-card p-4 shadow-sm">
-        <h3 class="auth-title text-center mb-3">Login</h3>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card auth-card p-4 shadow-sm">
+                <h3 class="auth-title text-center mb-3">Login</h3>
 
-        <% if (typeof error !== 'undefined' && error) { %>
-          <div class="alert alert-danger"><%= error %></div>
-        <% } %>
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <div class="alert alert-danger"><%= error %></div>
+                <% } %>
 
-        <!-- Local login form -->
-        <form action="/users/login" method="POST">
-          <div class="mb-3">
-            <input class="form-control" type="text" name="username" placeholder="Username" required>
-          </div>
-          <div class="mb-3">
-            <input class="form-control" type="password" name="password" placeholder="Password" required>
-          </div>
-          <button class="btn btn-success w-100" type="submit">Login</button>
-        </form>
+                <form action="/users/login" method="POST">
+                    <div class="mb-3">
+                        <input class="form-control" type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <button class="btn btn-success w-100" type="submit">Login</button>
+                </form>
 
-        <hr>
-
-        <!-- OAuth Buttons -->
-        <div class="d-grid gap-2">
-          <a class="btn btn-danger w-100" href="/users/auth/google">
-            <i class="fa-brands fa-google"></i> Login with Google
-          </a>
-
-          <a class="btn btn-dark w-100" href="/users/auth/github">
-            <i class="fa-brands fa-github"></i> Login with GitHub
-          </a>
-
-          <a class="btn btn-primary w-100" href="/users/auth/facebook">
-            <i class="fa-brands fa-facebook"></i> Login with Facebook
-          </a>
+                <div class="text-center mt-3 small">New user? <a href="/users/register">Register</a></div>
+            </div>
         </div>
-
-        <div class="text-center mt-3 small">
-          New user? <a href="/users/register">Register</a>
-        </div>
-
-      </div>
     </div>
-  </div>
 </main>
+
 </body>
 </html>

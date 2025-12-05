@@ -1,13 +1,15 @@
-// models/user.js
+//Kenil Part 2
+
+//importing mongoose
 let mongoose = require('mongoose');
-
+// creating model structure for users
 let userModel = mongoose.Schema({
-  username: String,
-  password: String,
-  // OAuth provider IDs
-  googleId: { type: String, default: null },
-  githubId: { type: String, default: null },
-  facebookId: { type: String, default: null }
-}, { collection: "users" });
-
+    username: String,
+    password: String,
+},
+    {
+        collection: "users"
+    }
+);
+//exporting the model
 module.exports = mongoose.model('User', userModel);
